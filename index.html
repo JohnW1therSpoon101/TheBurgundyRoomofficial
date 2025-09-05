@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Burgundy Room</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <!-- Sophisticated headline font (cursive-style) + elegant serif -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --burgundy: #800020;
+        --burgundy-2: #5d0015;
+        --rose: #a83244;
+        --cream: #f0e6e6;
+        --deep: #1a0d0d;
+      }
+      body {
+        background-color: var(--deep);
+        color: var(--cream);
+        font-family: "Playfair Display", serif;
+      }
+      header,
+      section {
+        padding: 4rem 0;
+      }
+      nav a {
+        color: var(--cream);
+      }
+      .brand-title {
+        font-family: "Great Vibes", cursive;
+        font-size: 2rem;
+        letter-spacing: 0.5px;
+      }
+
+      .panel {
+        background: linear-gradient(
+          180deg,
+          rgba(128, 0, 32, 0.25),
+          rgba(90, 0, 20, 0.35)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        padding: 2.75rem 2rem;
+        backdrop-filter: blur(4px);
+      }
+      .hero {
+        text-align: center;
+        margin-top: 2rem;
+      }
+      .hero h1 {
+        font-family: "Great Vibes", cursive;
+        font-size: 3rem;
+        margin-bottom: 0.25rem;
+      }
+      .subtitle {
+        opacity: 0.9;
+        margin-top: 0.25rem;
+      }
+      .founded {
+        font-size: 0.95rem;
+        opacity: 0.9;
+        margin-bottom: 1rem;
+      }
+
+      .stickers {
+        display: flex;
+        gap: 0.6rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 1rem 0 1.25rem;
+      }
+      .sticker {
+        border: 1px dashed rgba(255, 255, 255, 0.25);
+        border-radius: 999px;
+        padding: 0.35rem 0.7rem;
+        font-size: 0.9rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: rgba(255, 255, 255, 0.05);
+      }
+      .sticker img {
+        width: 18px;
+        height: 18px;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 0.9rem;
+        margin-top: 0.75rem;
+      }
+      .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.12s ease, background 0.12s ease;
+      }
+      .social-icons a:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.14);
+      }
+      .social-icons img {
+        width: 22px;
+        height: 22px;
+      }
+
+      .button-primary,
+      .button-primary:visited {
+        background-color: var(--burgundy);
+        border: none;
+        padding: 0.9rem 1.4rem;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: 600;
+      }
+      .button-primary:hover {
+        background-color: var(--rose);
+      }
+
+      .reserve-wrap {
+        margin-top: 2rem;
+      }
+      .fieldset {
+        margin-top: 1.25rem;
+      }
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      @media (max-width: 768px) {
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      #thankyou {
+        display: none;
+      }
+      footer small a {
+        color: var(--cream);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="container-fluid">
+      <ul>
+        <li><strong class="brand-title">The Burgundy Room</strong></li>
+      </ul>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#reserve">Reserve a Room</a></li>
+        <li><a href="#contact" role="button">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- STARTUP PAGE -->
+    <main class="container" id="home">
+      <div class="panel hero">
+        <h1>Welcome to The Burgundy Room!</h1>
+        <p class="founded">Founded by: <strong>Stxrn</strong></p>
+        <p class="subtitle">
+          Where upcoming musicians &amp; artists shine — jazz, R&amp;B, and
+          hip-hop vibes.
+        </p>
+
+        <div class="stickers" aria-label="platform stickers">
+          <span class="sticker"
+            ><img
+              src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
+              alt=""
+            />Instagram</span
+          >
+          <span class="sticker"
+            ><img
+              src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png"
+              alt=""
+            />TikTok</span
+          >
+          <span class="sticker"
+            ><img
+              src="https://cdn-icons-png.flaticon.com/512/733/733635.png"
+              alt=""
+            />X</span
+          >
+          <span class="sticker"
+            ><img
+              src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+              alt=""
+            />Facebook</span
+          >
+        </div>
+
+        <div class="social-icons" aria-label="social media buttons">
+          <a
+            href="https://www.instagram.com/theburgundyroomofficial/?utm_source=ig_web_button_share_sheet"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
+              alt="Instagram"
+            />
+          </a>
+          <a
+            href="https://www.tiktok.com/@theburgundyroom?is_from_webapp=1&sender_device=pc"
+            target="_blank"
+            rel="noopener"
+            aria-label="TikTok"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png"
+              alt="TikTok"
+            />
+          </a>
+          <a href="#" aria-label="X (coming soon)"
+            ><img
+              src="https://cdn-icons-png.flaticon.com/512/733/733635.png"
+              alt="X"
+          /></a>
+          <a href="#" aria-label="Facebook (coming soon)"
+            ><img
+              src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+              alt="Facebook"
+          /></a>
+        </div>
+
+        <br />
+        <a href="#reserve" class="button-primary">RESERVE A ROOM</a>
+      </div>
+    </main>
+
+    <!-- RESERVE A ROOM -->
+    <main class="container" id="reserve">
+      <div class="panel">
+        <h2 style="margin-top: 0">Reserve a Room</h2>
+        <p>Fill out the form below and we’ll take it from there.</p>
+
+        <form id="reservationForm" class="reserve-wrap">
+          <!-- Honeypot (anti-bot) -->
+          <input
+            type="text"
+            name="_gotcha"
+            style="display: none"
+            tabindex="-1"
+            autocomplete="off"
+          />
+
+          <!-- Q1: Package -->
+          <fieldset class="fieldset">
+            <label for="package"><strong>Choose a Package:</strong></label>
+            <select id="package" name="package" required>
+              <option value="" disabled selected>
+                — Select your package —
+              </option>
+              <option
+                value="Free — Promo Video + default caption + Tags = Free"
+              >
+                Free Package — Promotional Video + default caption + Tags = Free
+              </option>
+              <option value="$10 — Promo Video + Custom Caption + Tags">
+                $10 — Promotional Video + Custom Caption + Tags
+              </option>
+              <option
+                value="$210 — Promo Video + Custom Caption + Custom Tags + $50 ad boost"
+              >
+                $210 — Promo Video + Custom Caption + Custom Tags + $50 ad boost
+              </option>
+              <option
+                value="Negotiate — Promo Video + Custom Caption + Custom Tags + Custom ad boost"
+              >
+                NEGOTIATE — Promo Video + Custom Caption + Custom Tags + Custom
+                ad boost
+              </option>
+            </select>
+          </fieldset>
+
+          <!-- Q2: Email -->
+          <fieldset class="fieldset">
+            <label for="email"
+              ><strong>Provide your email address:</strong></label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+          </fieldset>
+
+          <!-- Q3: Social link(s) -->
+          <fieldset class="fieldset">
+            <label for="socials"
+              ><strong>Provide Social Media Link(s):</strong></label
+            >
+            <input
+              type="url"
+              id="socials"
+              name="socials"
+              placeholder="https://instagram.com/yourhandle or multiple links separated by commas"
+              required
+            />
+          </fieldset>
+
+          <!-- Q4: Name -->
+          <fieldset class="fieldset">
+            <legend><strong>Name</strong></legend>
+            <div class="two-col">
+              <div>
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required />
+              </div>
+              <div>
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required />
+              </div>
+            </div>
+            <label for="artistName" style="margin-top: 0.75rem"
+              >Artist/Performer Name</label
+            >
+            <input type="text" id="artistName" name="artistName" required />
+          </fieldset>
+
+          <!-- Q5: Genre -->
+          <fieldset class="fieldset">
+            <legend><strong>Genre (pick one)</strong></legend>
+            <label
+              ><input type="radio" name="genre" value="Jazz" required />
+              Jazz</label
+            >
+            <label
+              ><input type="radio" name="genre" value="R&B" /> R&amp;B</label
+            >
+            <label
+              ><input type="radio" name="genre" value="HipHop" /> HipHop</label
+            >
+          </fieldset>
+
+          <!-- Q6: Where are you from -->
+          <fieldset class="fieldset">
+            <legend><strong>Where are you from?</strong></legend>
+            <div class="two-col">
+              <div>
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" required />
+              </div>
+              <div>
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" required />
+              </div>
+            </div>
+            <label for="country" style="margin-top: 0.75rem">Country</label>
+            <input type="text" id="country" name="country" required />
+          </fieldset>
+
+          <button type="submit" class="button-primary">Submit</button>
+        </form>
+      </div>
+    </main>
+
+    <!-- THANK YOU (gated) -->
+    <main class="container" id="thankyou">
+      <div class="panel" style="text-align: center">
+        <h2>Thank you for reserving a room!</h2>
+        <p>
+          <em
+            >DISCLAIMER: VIEWERS CAN ONLY SEE THIS PAGE AFTER SUBMITTING THE
+            RESERVATION.</em
+          >
+        </p>
+        <p>
+          Our consultants will reach out to you with next steps upon further
+          evaluation.<br />You will hear back from us within 24 hours!
+        </p>
+        <a href="#home" class="button-primary" id="returnHome">Return Home</a>
+      </div>
+    </main>
+
+    <!-- Stay Connected (optional) -->
+    <section aria-label="Subscribe example">
+      <div class="container">
+        <article class="panel">
+          <hgroup>
+            <h2>Stay Connected</h2>
+            <h3>Subscribe for news, events &amp; features</h3>
+          </hgroup>
+          <form
+            class="grid"
+            onsubmit="event.preventDefault(); alert('Thanks for subscribing!');"
+          >
+            <input
+              type="text"
+              id="firstname"
+              name="firstname"
+              placeholder="First name"
+              aria-label="First name"
+              required
+            />
+            <input
+              type="email"
+              id="sub-email"
+              name="email"
+              placeholder="Email"
+              aria-label="Email"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="panel">
+          <h2>Contact Information</h2>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:TheBurgundyRoomofficial@gmail.com"
+              >TheBurgundyRoomofficial@gmail.com</a
+            >
+          </p>
+          <p>
+            <strong>Business Phone:</strong>
+            <a href="tel:+18325343654">832 534 3654</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="container" style="padding-bottom: 3rem">
+      <small>
+        <a href="mailto:TheBurgundyRoomofficial@gmail.com"
+          >TheBurgundyRoomofficial@gmail.com</a
+        >
+        •
+        <a href="tel:+18325343654">832 534 3654</a>
+      </small>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+      // 1) Initialize EmailJS with your Public Key
+      (function () {
+        emailjs.init("0mquTVHDRN-WPBxQM");
+      })();
+
+      // 2) Gate the Thank You page + send via EmailJS
+      let submissionFlag = false;
+      const form = document.getElementById("reservationForm");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Send the form via EmailJS (no backend)
+        emailjs
+          .sendForm("service_g1mnc9f", "template_4l594rd", this)
+          .then(() => {
+            submissionFlag = true;
+            document.querySelector("#reserve").style.display = "none";
+            document.querySelector("#thankyou").style.display = "block";
+            window.scrollTo(0, 0);
+          })
+          .catch((err) => {
+            console.error("EmailJS error:", err);
+            alert(
+              "Sorry—there was an issue sending your reservation. Please try again."
+            );
+          });
+      });
+
+      // Prevent direct navigation to #thankyou unless submitted
+      window.addEventListener("hashchange", function () {
+        if (location.hash === "#thankyou" && !submissionFlag) {
+          location.hash = "#home";
+        }
+      });
+
+      // Reset flag when returning home
+      document.getElementById("returnHome")?.addEventListener("click", () => {
+        submissionFlag = false;
+      });
+    </script>
+  </body>
+</html>
