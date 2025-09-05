@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thank You — The Burgundy Room</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --burgundy: #800020;
+        --rose: #a83244;
+        --cream: #f0e6e6;
+        --deep: #1a0d0d;
+      }
+      body {
+        background-color: var(--deep);
+        color: var(--cream);
+        font-family: "Playfair Display", serif;
+      }
+      nav a {
+        color: var(--cream);
+      }
+      .brand-title {
+        font-family: "Great Vibes", cursive;
+        font-size: 2rem;
+        letter-spacing: 0.5px;
+      }
+      .panel {
+        background: linear-gradient(
+          180deg,
+          rgba(128, 0, 32, 0.25),
+          rgba(90, 0, 20, 0.35)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        padding: 2.75rem 2rem;
+        backdrop-filter: blur(4px);
+        text-align: center;
+        margin-top: 3rem;
+      }
+      .button-primary,
+      .button-primary:visited {
+        background-color: var(--burgundy);
+        border: none;
+        padding: 0.9rem 1.4rem;
+        color: #fff;
+        border-radius: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: 600;
+      }
+      .button-primary:hover {
+        background-color: var(--rose);
+      }
+      footer small a {
+        color: var(--cream);
+      }
+      h2 {
+        margin-top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="container-fluid">
+      <ul>
+        <li><strong class="brand-title">The Burgundy Room</strong></li>
+      </ul>
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="reserve.html">Reserve a Room</a></li>
+        <li><a href="index.html#contact" role="button">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- THANK YOU -->
+    <main class="container">
+      <div class="panel">
+        <h2>THANK YOU</h2>
+        <p>
+          Thank you for reserving a room! One of our consultants will reach out
+          to you with next steps upon further evaluation.
+        </p>
+        <p>You will hear back from us within 24 hours!</p>
+        <a href="index.html#home" class="button-primary" id="returnHome"
+          >Return Home</a
+        >
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container" style="padding-bottom: 3rem">
+      <small>
+        <a href="mailto:TheBurgundyRoomofficial@gmail.com"
+          >TheBurgundyRoomofficial@gmail.com</a
+        >
+        •
+        <a href="tel:+18325343654">832 534 3654</a>
+      </small>
+    </footer>
+
+    <script>
+      // Gate access: only show this page if the reservation was just submitted
+      (function () {
+        const ok = sessionStorage.getItem("reservation_ok");
+        if (!ok) {
+          // direct access not allowed
+          window.location.replace("index.html");
+          return;
+        }
+        // Clear the flag so reload/bookmark won't keep access
+        sessionStorage.removeItem("reservation_ok");
+      })();
+    </script>
+  </body>
+</html>
